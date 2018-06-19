@@ -1,0 +1,97 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    @include clearfix();
+    margin-bottom: 45px;
+    z-index: 10;
+    background: url(../img/hdr-bg.png) center top no-repeat $brand-primary;
+    @include has-shadow();
+    position: relative;
+}
+
+.header {
+    &__topbar {
+        @include clearfix();
+        padding: 0 10px;
+        background-color: rgba(211, 47, 47, .5);
+        color: white;
+        @include font-size(13, 35);
+        z-index: 5;
+    }
+    &__links {
+        a {
+            margin-left: 10px;
+            color: white;
+            &:hover {
+                color: #ddd;
+            }
+        }
+    }
+    &__content {
+        @include clearfix();
+        overflow: hidden;
+        height: 110px;
+        z-index: 4;
+        .logo {
+            position: relative;
+            top: -30px;
+        }
+    }
+    &__breakingnews {
+        position: absolute;
+        top: 100%;
+        .story__title {
+            font-style: italic;
+            line-height: 35px !important;
+            a {
+                color: #000;
+            }
+        }
+    }
+}
+
+.navigator {
+    @include clearfix();
+    @include font-size(14, 35);
+    background: white;
+    > li {
+        float: left;
+        position: relative;
+        a {
+            display: block;
+            padding: 0 10px;
+            @include transition(all, 0.2, ease);
+            &:hover {
+                background-color: #eee;
+            }
+        }
+        &:hover {
+            .navigator__child {
+                left: auto;
+            }
+            .navigator__search {
+                right: 0;
+            }
+        }
+    }
+    &__child {
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        background: white;
+        @include has-shadow();
+        width: 200px;
+        z-index: 2;
+    }
+    &__search {
+        width: 500px;
+        padding: 10px;
+        input {
+            width: 80%;
+            float: left;
+        }
+        button {
+            float: left;
+        }
+    }
+}

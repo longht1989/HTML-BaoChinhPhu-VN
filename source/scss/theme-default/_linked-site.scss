@@ -1,0 +1,38 @@
+/* linked */
+
+.linked {
+    padding: 8px;
+    background: white;
+    @include has-shadow;
+    margin-top: 10px;
+    &-listing {
+        margin-bottom: 20px;
+    }
+    &--icon {
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        float: left;
+        color: $brand-success;
+    }
+    &--txt {
+        font-size: 14px;
+        line-height: 1.4em;
+        a {
+            color: $brand-success;
+            transition: color 0.2s ease;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &.single {
+            margin-top: 6px;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+/* ====================================
+   Customize breadcrumbs
+   ==================================== */
+
+.breadcrumb {
+    padding: 0;
+    margin-bottom: $line-height-computed;
+    list-style: none;
+    background-color: $breadcrumb-bg;
+    border-radius: $border-radius-base;
+    > li {
+        text-transform: normal;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        + li:before {
+            // [converter] Workaround for https://github.com/sass/libsass/issues/1115
+            $nbsp: "\00a0";
+            content: "#{$breadcrumb-separator}#{$nbsp}"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: $breadcrumb-color;
+            font-weight: normal;
+        }
+    }
+    > .active {
+        color: $brand-primary;
+    }
+}
+
+.breadcrumbs {
+    font-family: $font-family-tinos, Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+    .cate {
+        font-size: 20px;
+        margin-bottom: 7px;
+        text-transform: uppercase;
+        a {
+            & + a {
+                &::before {
+                    content: '-';
+                    display: inline;
+                    padding: 0 8px;
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    .subcate {
+        a {
+            margin-right: 10px;
+        }
+    }
+    a {
+        color: $brand-primary;
+        &:hover {
+            color: $brand-success;
+        }
+        &.active {
+            color: $brand-success;
+        }
+    }
+}
